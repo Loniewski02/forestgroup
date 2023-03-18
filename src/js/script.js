@@ -24,10 +24,9 @@ const handleObserver = () => {
 	allSections.forEach(section => {
 		if (section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
 			hamburgerInner.classList.add('black-bars');
-			navDesktop.classList.add('nav-desktop--bottom-border');
 		} else if (!section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
 			hamburgerInner.classList.remove('black-bars');
-			navDesktop.classList.remove('nav-desktop--bottom-border');
+
 		}
 	});
 };
@@ -40,7 +39,6 @@ const handleScrollSpy = () => {
 		allSections.forEach(section => {
 			if (window.scrollY <= section.offsetTop + section.offsetHeight - 88.6) {
 				sectionsArr.push(section);
-				console.log(sectionsArr);
 				const activeSection = navDesktopItems.querySelector(`[href*="${sectionsArr[0].id}"]`);
 
 				allNavItems.forEach(item => item.classList.remove('nav__item--active'));

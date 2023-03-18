@@ -190,7 +190,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		margin-bottom: 4em;
+		margin-bottom: 2.5em;
 		padding: 2.5em 1em;
 		border-radius: 6px;
 		box-shadow: 0 2px 5px $dark-grey;
@@ -220,14 +220,12 @@ body {
 			list-style: none;
 
 			&-item {
+				display: flex;
+				align-items: center;
 				margin-bottom: 0.5em;
 
-				.fa {
+				img {
 					margin-right: 0.5em;
-				}
-
-				.fa-check {
-					color: $green-color;
 				}
 
 				&--disabled {
@@ -270,24 +268,28 @@ body {
 
 .footer {
 	background-color: $light-grey;
-
-	.wrapper {
-		padding: 4em 2em 2em;
-	}
+	padding: 4em 2em 0;
+	overflow: hidden;
 
 	&__boxes {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		padding-bottom: 2em;
 	}
 
 	&__heading {
 		font-size: 3.6rem;
 		margin-bottom: 1.5em;
+
 		&-brand {
+			display: flex;
+			align-items: center;
 			font-weight: 400;
-			i {
-				color: $dark-grey;
+
+			img {
+				height: 4.5rem;
+				margin-right: 0.2em;
 			}
 		}
 	}
@@ -317,8 +319,19 @@ body {
 	}
 
 	&__bottom-text {
+		position: relative;
 		padding: 2em;
 		text-align: center;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -50%;
+			right: -50%;
+			height: 2px;
+			background-color: #c0c0c0;
+		}
 	}
 }
 

@@ -20,11 +20,8 @@
 			padding: 0 2em;
 			width: 100%;
 			background-color: $pure-white;
+			border-bottom: 1px solid $dark-grey;
 			z-index: 1000;
-
-			&--bottom-border {
-				border-bottom: 1px solid $dark-grey;
-			}
 		}
 		.wrapper {
 			display: flex;
@@ -37,12 +34,14 @@
 		}
 
 		&__brand {
+			display: flex;
+			align-items: center;
 			text-decoration: none;
 			font-size: 3rem;
 
-			i {
+			img {
 				margin-right: 0.3em;
-				color: $dark-grey;
+				height: 3rem;
 			}
 
 			span {
@@ -95,13 +94,12 @@
 
 	.offers {
 		&__option {
-			width: 30%;
-			margin-right: 2em;
+			width: 31%;
 			margin-bottom: 0;
 
 			&:nth-child(2) {
 				order: 0;
-				margin-right: 2em;
+				margin: 0;
 			}
 			&:nth-child(3) {
 				margin: 0;
@@ -115,6 +113,10 @@
 
 			&-brand {
 				font-size: 5.2rem;
+
+				img {
+					height: 5.2rem;
+				}
 			}
 		}
 
@@ -152,9 +154,4 @@
 }
 
 @media (min-width: 1200px) {
-	.nav {
-		&-desktop {
-			margin: 0;
-		}
-	}
 }
