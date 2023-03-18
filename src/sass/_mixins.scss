@@ -1,0 +1,68 @@
+@use './colors' as *;
+
+@mixin heroImagesGreen($bgImg) {
+	background-image: $shadow-green, url($bgImg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: scroll;
+}
+
+@mixin heroImagesBlack($bgImg) {
+	background-image: $shadow-black, url($bgImg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: scroll;
+}
+
+@mixin linkAnimation($aColor) {
+	//dodac no rodzicu position relative
+	position: relative;
+	z-index: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 0;
+		background-color: $aColor;
+		z-index: -1;
+		transition: height 0.3s;
+	}
+
+	&:hover::before {
+		height: 100%;
+	}
+}
+
+@mixin btnAnimation($btnColor) {
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 0;
+		background-color: $btnColor;
+		z-index: -1;
+		transition: width 0.3s;
+	}
+
+	&::before {
+		left: 50%;
+	}
+
+	&::after {
+		right: 50%;
+	}
+
+	&:hover::before,
+	&:hover::after {
+		width: 100%;
+	}
+}

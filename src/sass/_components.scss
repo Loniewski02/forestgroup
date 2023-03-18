@@ -1,0 +1,50 @@
+@use './colors' as *;
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
+
+.section-padding {
+	padding: 4em 2em;
+}
+
+.section-heading {
+	position: relative;
+	margin-bottom: 1.5em;
+	font-size: 3.2rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+	color: $pure-black;
+	letter-spacing: 2px;
+}
+
+.black-bars {
+	background-color: $pure-black;
+
+	&::before,
+	&::after {
+		background-color: $pure-black;
+	}
+}
+
+//====================================================
+//MEDIA
+//====================================================
+
+@media (min-width: 768px) {
+	.section-heading {
+		font-size: 3.6rem;
+	}
+
+	.section-padding {
+		padding: 5em 2em;
+	}
+}
+@media (min-width: 992px) {
+	.section-heading {
+		font-size: 4.2rem;
+	}
+}

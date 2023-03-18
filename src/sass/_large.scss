@@ -1,0 +1,160 @@
+@media (min-width: 992px) {
+	.hamburger {
+		display: none;
+	}
+
+	.section {
+		scroll-margin-top: 80px;
+	}
+
+	.nav {
+		&-mobile {
+			display: none;
+		}
+
+		&-desktop {
+			position: sticky;
+			top: 0;
+			left: 0;
+			display: block;
+			padding: 0 2em;
+			width: 100%;
+			background-color: $pure-white;
+			z-index: 1000;
+
+			&--bottom-border {
+				border-bottom: 1px solid $dark-grey;
+			}
+		}
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__items {
+			font-size: 0;
+		}
+
+		&__brand {
+			text-decoration: none;
+			font-size: 3rem;
+
+			i {
+				margin-right: 0.3em;
+				color: $dark-grey;
+			}
+
+			span {
+				color: $pure-black;
+			}
+		}
+
+		&__item {
+			display: inline-block;
+			margin: 0;
+			padding: 1.5em;
+			font-size: 2.1rem;
+			text-decoration: none;
+			color: $dark-grey;
+			transition: color 0.3s, background-color 0.3s;
+
+			&--active {
+				background-color: $pure-black;
+				color: $light-grey;
+			}
+
+			&:hover {
+				background-color: $pure-black;
+				color: $light-grey;
+			}
+		}
+	}
+
+	.header {
+		background-image: $shadow-black, url('../img/header-big.jpg');
+		&__heading {
+			font-size: 5rem;
+		}
+	}
+
+	.aboutus {
+		&__title {
+			font-size: 2.8rem;
+		}
+
+		&__text {
+			font-size: 2rem;
+			line-height: 1.6em;
+		}
+	}
+
+	.hero-img {
+		background-image: $shadow-green, url('../img/hero-big.jpg');
+	}
+
+	.offers {
+		&__option {
+			width: 30%;
+			margin-right: 2em;
+			margin-bottom: 0;
+
+			&:nth-child(2) {
+				order: 0;
+				margin-right: 2em;
+			}
+			&:nth-child(3) {
+				margin: 0;
+			}
+		}
+	}
+
+	.footer {
+		&__heading {
+			width: 40%;
+
+			&-brand {
+				font-size: 5.2rem;
+			}
+		}
+
+		&__box {
+			&-title {
+				margin-bottom: 1em;
+				font-size: 2.6rem;
+			}
+
+			&-list {
+				&-item {
+					margin-bottom: 1em;
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		&__bottom-text {
+			font-size: 2rem;
+		}
+	}
+
+	.contact-page {
+		.header {
+			background-image: $shadow-black, url('../img/contact-header-big.jpg');
+		}
+	}
+
+	.offers-page {
+		.header {
+			background-image: $shadow-black, url('../img/offers-header-big.jpg');
+			background-position: 10% 20%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav {
+		&-desktop {
+			margin: 0;
+		}
+	}
+}
