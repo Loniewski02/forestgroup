@@ -40,12 +40,14 @@ const handleScrollSpy = () => {
 		allSections.forEach(section => {
 			if (window.scrollY <= section.offsetTop + section.offsetHeight - 88.6) {
 				sectionsArr.push(section);
+				console.log(sectionsArr);
 				const activeSection = navDesktopItems.querySelector(`[href*="${sectionsArr[0].id}"]`);
 
 				allNavItems.forEach(item => item.classList.remove('nav__item--active'));
-				activeSection.classList.add('nav__item--active');
 
-				console.log(activeSection.getAttribute('href'));
+				if (!sectionsArr[0].classList.contains('no-id')) {
+					activeSection.classList.add('nav__item--active');
+				}
 			}
 		});
 	}
