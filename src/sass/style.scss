@@ -169,15 +169,16 @@ body {
 	}
 
 	&__info {
+		display: block;
 		margin-top: 2.5em;
-		font-size: 1.8rem;
+		line-height: 1.5em;
+		font-size: 2rem;
 		color: $dark-grey;
 
 		a {
 			padding: 0.2em 0.1em;
 			text-decoration: none;
 			color: $pure-black;
-			border-bottom: 3px solid $green-color;
 			font-weight: bold;
 			@include linkAnimation($green-color);
 		}

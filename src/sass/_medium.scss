@@ -50,12 +50,9 @@
 	.offers {
 		&__box {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-between;
 			flex-direction: row;
 			flex-wrap: wrap;
-		}
-		&__info {
-			font-size: 2rem;
 		}
 		&__option {
 			width: 42%;
