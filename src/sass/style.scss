@@ -503,25 +503,46 @@ body {
 			}
 
 			&-img {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				padding: 2em;
 				height: 100%;
 				border-radius: 6px;
-				@include heroImagesGreen('../img/contact-header-small.jpg');
 				transition: transform 0.5s, opacity 0.5s;
+				background-position: center;
+				background-size: cover;
+
+				&--first {
+					background-image: $shadow-card-black, url('../img/offers-card-img1.jpg');
+				}
+				&--second {
+					background-image: $shadow-card-black, url('../img/offers-card-img2.jpg');
+					background-position: 60% 50%;
+				}
+				&--third {
+					background-image: $shadow-card-black, url('../img/offers-card-img3.jpg');
+					background-position: 60% 50%;
+				}
+				&--fourth {
+					background-image: $shadow-card-black, url('../img/offers-card-img4.jpg');
+					background-position: 35% 50%;
+				}
+				&--fifth {
+					background-image: $shadow-card-black, url('../img/offers-card-img5.jpg');
+				}
+				&--sixth {
+					background-image: $shadow-card-black, url('../img/offers-card-img6.jpg');
+				}
 
 				&-title {
-					position: absolute;
-					left: 50%;
-					transform: translateX(-50%);
-					top: 1.3em;
-					width: max-content;
 					color: $pure-white;
 					font-size: 3rem;
 				}
 
 				&-text {
-					position: absolute;
-					bottom: 1.5em;
-					right: 1em;
+					align-self: flex-end;
 					display: flex;
 					align-items: center;
 					font-size: 1.8rem;
@@ -551,7 +572,7 @@ body {
 				transition: transform, 0.5s, opacity 0.5s;
 
 				&-title {
-					margin: 0.5em 0;
+					text-align: center;
 					font-size: 3rem;
 					font-weight: 400;
 				}
@@ -562,30 +583,41 @@ body {
 				}
 
 				&-list {
+					width: 80%;
 					list-style: none;
 					text-align: center;
+
 					&-item {
-						padding: 0.8em 1em;
+						padding: 0.5em 1em;
 						font-size: 1.8rem;
-						border-bottom: 1px solid $dark-grey;
+						border-bottom: 1px dashed $dark-grey;
+						&:last-child {
+							border: none;
+						}
 					}
 				}
 
 				&-text {
-					margin-top: 1em;
 					text-align: center;
+					margin-bottom: 1em;
 				}
 
 				&-btn {
-					margin-top: 1em;
-					padding: 1em 2em;
-					border-radius: 6px;
-					background: transparent;
-					border: 2px solid $dark-grey;
-					box-shadow: 0 2px 5px $dark-grey;
+					padding: 0.8em 1em;
 					width: 100%;
 					max-width: 300px;
-					@include btnAnimation($green-color);
+					border-radius: 6px;
+					background: $green-color;
+					border: 2px solid $green-color;
+					box-shadow: 0 2px 5px $green-color;
+					font-size: 1.8rem;
+					transition: border 0.3s, box-shadow 0.3s;
+					@include btnAnimation($darker-green-color);
+
+					&:hover {
+						border: 2px solid $darker-green-color;
+						box-shadow: 0 2px 5px $darker-green-color;
+					}
 				}
 			}
 		}

@@ -186,7 +186,39 @@
 		.special-offers {
 			&__card {
 				width: 48%;
-				height: 600px;
+				height: 500px;
+
+				&-img {
+					&-title {
+						font-size: 3rem;
+					}
+
+					&-text {
+						font-size: 2.2rem;
+						img {
+							height: 4rem;
+						}
+					}
+				}
+
+				&-info {
+					&-title {
+						font-size: 3.5rem;
+					}
+
+					&-price {
+						font-size: 4.5rem;
+					}
+
+					&-list {
+						&-item {
+							font-size: 1.9rem;
+						}
+					}
+					&-btn {
+						font-size: 2.1rem;
+					}
+				}
 			}
 		}
 	}

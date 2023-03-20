@@ -81,4 +81,53 @@
 			}
 		}
 	}
+
+	.offers-page {
+		.header {
+			background-image: $shadow-black, url('../img/offers-header-small.jpg');
+			background-position: 10% 50%;
+		}
+
+		.offers {
+			background-color: $light-grey;
+
+			.section-heading {
+				margin-bottom: 1.5em;
+			}
+
+			&__option {
+				background-color: $pure-white;
+			}
+		}
+
+		.special-offers {
+			&__card {
+				&-img {
+					&-title {
+						font-size: 3.5rem;
+					}
+
+					&-text {
+						font-size: 2.2rem;
+						img {
+							height: 4.2rem;
+						}
+					}
+				}
+
+				&-info {
+					&-title {
+						font-size: 3.5rem;
+					}
+
+					&-price {
+						font-size: 4.2rem;
+					}
+					&-btn {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+	}
 }
