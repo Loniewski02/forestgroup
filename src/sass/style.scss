@@ -126,6 +126,7 @@ body {
 			color: $pure-black;
 			font-weight: 400;
 			text-decoration: none;
+			@include linkAnimation($green-color);
 		}
 	}
 }
@@ -173,13 +174,12 @@ body {
 		margin-top: 2.5em;
 		line-height: 1.5em;
 		font-size: 2rem;
-		color: $dark-grey;
+		color: $pure-black;
 
 		a {
-			padding: 0.2em 0.1em;
 			text-decoration: none;
-			color: $pure-black;
 			font-weight: bold;
+			color: $pure-black;
 			@include linkAnimation($green-color);
 		}
 	}
@@ -239,19 +239,33 @@ body {
 			padding: 0.5em 2.5em;
 			background-color: transparent;
 			border-radius: 6px;
-			border: none;
+			border: 2px solid transparent;
 			font-size: 2rem;
 			color: $pure-black;
 			background-color: $pure-white;
 			box-shadow: 0 2px 5px $dark-grey;
 			@include btnAnimation($light-grey);
 			cursor: pointer;
-			transition: background-color 0.3s, box-shadow 0.3s;
+			transition: box-shadow 0.3s, border 0.3s;
+
+			&:focus {
+				outline: none;
+				border: 2px solid $focus-border;
+			}
+
+			&:hover {
+				border: 2px solid $light-grey;
+			}
 
 			&--active {
 				background-color: $green-color;
 				box-shadow: 0 2px 5px $green-color;
-				transition: box-shadow 0.3s;
+				transition: box-shadow 0.3s, border 0.3s;
+
+				&:focus {
+					outline: none;
+					border: 2px solid $focus-border;
+				}
 
 				&::before,
 				&::after {
@@ -259,6 +273,7 @@ body {
 				}
 
 				&:hover {
+					border: 2px solid $darker-green-color;
 					box-shadow: 0 2px 5px $darker-green-color;
 				}
 			}
@@ -313,6 +328,11 @@ body {
 				a {
 					color: $pure-black;
 					text-decoration: none;
+
+					&:focus {
+						outline: none;
+						border-bottom: 2px solid $focus-border;
+					}
 				}
 			}
 		}
@@ -391,7 +411,7 @@ body {
 
 				&:focus {
 					outline: none;
-					border: 2px solid $green-color;
+					border: 2px solid $focus-border;
 				}
 
 				&::placeholder {
@@ -424,7 +444,7 @@ body {
 
 				&:focus {
 					outline: none;
-					border: 2px solid #1b6e13;
+					border: 2px solid $focus-border;
 				}
 
 				&:hover {
@@ -440,6 +460,135 @@ body {
 	.header {
 		background-image: $shadow-black, url('../img/offers-header-small.jpg');
 		background-position: 10% 50%;
+	}
+
+	.offers {
+		background-color: $light-grey;
+
+		.section-heading {
+			margin-bottom: 1.5em;
+		}
+
+		&__option {
+			background-color: $pure-white;
+		}
+	}
+
+	.special-offers {
+		&__cards {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			position: relative;
+			margin: 1em 0;
+			width: 100%;
+			height: 450px;
+			border-radius: 6px;
+			perspective: 2000px;
+
+			&:hover {
+				.special-offers__card-img {
+					transform: rotateY(-180deg);
+					opacity: 0;
+				}
+
+				.special-offers__card-info {
+					transform: rotateY(0);
+					opacity: 1;
+				}
+			}
+
+			&-img {
+				height: 100%;
+				border-radius: 6px;
+				@include heroImagesGreen('../img/contact-header-small.jpg');
+				transition: transform 0.5s, opacity 0.5s;
+
+				&-title {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top: 1.3em;
+					width: max-content;
+					color: $pure-white;
+					font-size: 3rem;
+				}
+
+				&-text {
+					position: absolute;
+					bottom: 1.5em;
+					right: 1em;
+					display: flex;
+					align-items: center;
+					font-size: 1.8rem;
+					color: $pure-white;
+
+					img {
+						height: 3.5rem;
+					}
+				}
+			}
+
+			&-info {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				padding: 2em;
+				background-color: $light-grey;
+				border-radius: 6px;
+				opacity: 0;
+				transform: rotateY(-180deg);
+				transition: transform, 0.5s, opacity 0.5s;
+
+				&-title {
+					margin: 0.5em 0;
+					font-size: 3rem;
+					font-weight: 400;
+				}
+
+				&-price {
+					font-weight: bold;
+					font-size: 4rem;
+				}
+
+				&-list {
+					list-style: none;
+					text-align: center;
+					&-item {
+						padding: 0.8em 1em;
+						font-size: 1.8rem;
+						border-bottom: 1px solid $dark-grey;
+					}
+				}
+
+				&-text {
+					margin-top: 1em;
+					text-align: center;
+				}
+
+				&-btn {
+					margin-top: 1em;
+					padding: 1em 2em;
+					border-radius: 6px;
+					background: transparent;
+					border: 2px solid $dark-grey;
+					box-shadow: 0 2px 5px $dark-grey;
+					width: 100%;
+					max-width: 300px;
+					@include btnAnimation($green-color);
+				}
+			}
+		}
 	}
 }
 

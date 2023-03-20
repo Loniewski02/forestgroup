@@ -164,4 +164,30 @@
 			}
 		}
 	}
+
+	.offers-page {
+		.header {
+			background-image: $shadow-black, url('../img/offers-header-small.jpg');
+			background-position: 10% 50%;
+		}
+
+		.offers {
+			background-color: $light-grey;
+
+			.section-heading {
+				margin-bottom: 1.5em;
+			}
+
+			&__option {
+				background-color: $pure-white;
+			}
+		}
+
+		.special-offers {
+			&__card {
+				width: 48%;
+				height: 600px;
+			}
+		}
+	}
 }

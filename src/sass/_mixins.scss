@@ -15,8 +15,8 @@
 }
 
 @mixin linkAnimation($aColor) {
-	//dodac no rodzicu position relative
 	position: relative;
+	padding: 0.2em 0.1em;
 	width: 100%;
 	z-index: 0;
 

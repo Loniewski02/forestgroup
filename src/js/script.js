@@ -26,7 +26,6 @@ const handleObserver = () => {
 			hamburgerInner.classList.add('black-bars');
 		} else if (!section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
 			hamburgerInner.classList.remove('black-bars');
-
 		}
 	});
 };
@@ -34,7 +33,7 @@ const handleObserver = () => {
 const handleScrollSpy = () => {
 	handleObserver();
 	const navDesktopItems = navDesktop.querySelector('.nav__items');
-	if (window.innerWidth > 992) {
+	if (document.body.classList.contains('main-page') && window.innerWidth >= 992) {
 		const sectionsArr = [];
 		allSections.forEach(section => {
 			if (window.scrollY <= section.offsetTop + section.offsetHeight - 88.6) {

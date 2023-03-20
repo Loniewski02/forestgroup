@@ -20,7 +20,7 @@
 			padding: 0 2em;
 			width: 100%;
 			background-color: $pure-white;
-			border-bottom: 1px solid $dark-grey;
+			border-bottom: 1px solid $pure-black;
 			z-index: 1000;
 		}
 		.wrapper {
@@ -149,6 +149,13 @@
 		.header {
 			background-image: $shadow-black, url('../img/offers-header-big.jpg');
 			background-position: 10% 20%;
+		}
+
+		.special-offers {
+			&__card {
+				width: 32%;
+				height: 600px;
+			}
 		}
 	}
 }
