@@ -380,7 +380,7 @@ body {
 		padding: 4em 1em;
 
 		.wrapper {
-			max-width: 600px;
+			max-width: 700px;
 		}
 
 		&__heading {
@@ -396,53 +396,59 @@ body {
 		}
 
 		&__form {
-			display: flex;
-			flex-direction: column;
-
-			label {
-				margin-bottom: 0.6em;
-				font-size: 1.5rem;
-			}
-
-			input {
+			&-box {
+				display: flex;
+				flex-direction: column;
 				margin-bottom: 2em;
-			}
 
-			input,
-			textarea {
-				padding: 0.6em 1em;
-				font-size: 1.8rem;
-				border: 2px solid $grey-color-contact;
-
-				&:focus {
-					outline: none;
-					border: 2px solid $focus-border;
+				label {
+					margin-bottom: 0.6em;
+					font-size: 1.5rem;
 				}
 
-				&::placeholder {
-					color: $grey-color-contact;
+				input,
+				textarea {
+					padding: 0.6em 1em;
+					font-size: 1.8rem;
+					border: 2px solid $grey-color-contact;
+
+					&:focus {
+						outline: none;
+						border: 2px solid $focus-border;
+					}
+
+					&::placeholder {
+						color: $grey-color-contact;
+					}
+				}
+
+				input,
+				textarea,
+				button {
+					border-radius: 8px;
+				}
+
+				textarea {
+					max-width: 100%;
+					min-height: 200px;
 				}
 			}
 
-			input,
-			textarea,
-			button {
-				border-radius: 8px;
-			}
-
-			textarea {
-				margin-bottom: 3em;
-				max-width: 100%;
-				min-height: 200px;
+			&-error {
+				margin-top: 0.2em;
+				font-style: italic;
+				color: tomato;
 			}
 
 			&-btn {
+				margin-top: 1em;
 				padding: 0.8em 1em;
 				width: 100%;
 				background-color: $green-color;
 				font-size: 2rem;
 				border: 2px solid transparent;
 				box-shadow: 0 2px 5px $green-color;
+				border-radius: 6px;
 				@include btnAnimation($darker-green-color);
 				cursor: pointer;
 				transition: box-shadow 0.3s, border 0.3s;

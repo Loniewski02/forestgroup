@@ -56,17 +56,32 @@
                 <div class="contact__box">
                     <h2 class="contact__heading">Skontaktuj się z nami</h2>
                     <form action="" class="contact__form">
-                        <label for="name">Imię</label>
-                        <input type="text" id="name" placeholder="Imię">
-                        <label for="last-name">Nazwisko</label>
-                        <input type="text" id="last-name" placeholder="Nazwisko">
-                        <label for="email">Twój e-mail</label>
-                        <input type="email" id="email" placeholder="przykład@mail.com">
-                        <label for="phone-number">Numer kontaktowy</label>
-                        <input type="number" id="phone-number" placeholder="Numer kontaktowy">
-                        <label for="msg">Wiadomość</label>
-                        <textarea id="msg" placeholder="Twoja wiadomość"></textarea>
-                        <button class="contact__form-btn" type="submit">Wyślij</button>
+                        <div class="contact__form-box">
+                            <label for="name">Imię</label>
+                            <input type="text" id="name" placeholder="Imię">
+                            <p class="contact__form-error">error</p>
+                        </div>
+                        <div class="contact__form-box">
+                            <label for="last-name">Nazwisko</label>
+                            <input type="text" id="last-name" placeholder="Nazwisko">
+                            <p class="contact__form-error">error</p>
+                        </div>
+                        <div class="contact__form-box">
+                            <label for="email">Twój e-mail</label>
+                            <input type="email" id="email" placeholder="przykład@mail.com">
+                            <p class="contact__form-error">error</p>
+                        </div>
+                        <div class="contact__form-box">
+                            <label for="phone-number">Numer kontaktowy</label>
+                            <input type="number" id="phone-number" placeholder="Numer kontaktowy">
+                            <p class="contact__form-error">error</p>
+                        </div>
+                        <div class="contact__form-box">
+                            <label for="msg">Wiadomość</label>
+                            <textarea id="msg" placeholder="Twoja wiadomość"></textarea>
+                            <p class="contact__form-error">error</p>
+                        </div>
+                        <button class="contact__form-btn">Wyślij</button>
                     </form>
                 </div>
             </div>
@@ -114,6 +129,7 @@
         <p class="footer__bottom-text">&copy;2021 Forest Group Company Ltd.</p>
     </footer>
     <script src="./dist/js/script.min.js"></script>
+    <script src="./dist/js/contactForm.min.js"></script>
 </body>
 
 </html>
