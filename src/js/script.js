@@ -1,10 +1,10 @@
 const navMobile = document.querySelector('.nav-mobile');
 const navDesktop = document.querySelector('.nav-desktop');
-const allNavItems = document.querySelectorAll('.nav__item');
 const hamburgerBtn = document.querySelector('.hamburger');
 const allSections = document.querySelectorAll('.section');
 
 const handleNav = () => {
+	const allNavItems = navMobile.querySelectorAll('.nav__item');
 	hamburgerBtn.classList.toggle('is-active');
 	navMobile.classList.toggle('nav-mobile--active');
 
@@ -19,18 +19,21 @@ const handleNav = () => {
 };
 
 const handleObserver = () => {
-	const currentSection = window.scrollY;
-	const hamburgerInner = hamburgerBtn.querySelector('.hamburger-inner');
-	allSections.forEach(section => {
-		if (section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
-			hamburgerInner.classList.add('black-bars');
-		} else if (!section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
-			hamburgerInner.classList.remove('black-bars');
-		}
-	});
+	if (window.innerWidth < 992) {
+		const currentSection = window.scrollY;
+		const hamburgerInner = hamburgerBtn.querySelector('.hamburger-inner');
+		allSections.forEach(section => {
+			if (section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
+				hamburgerInner.classList.add('black-bars');
+			} else if (!section.classList.contains('white-section') && section.offsetTop <= currentSection + 55) {
+				hamburgerInner.classList.remove('black-bars');
+			}
+		});
+	}
 };
 
 const handleScrollSpy = () => {
+	const allNavItems = navDesktop.querySelectorAll('.nav__item');
 	handleObserver();
 	const navDesktopItems = navDesktop.querySelector('.nav__items');
 	if (document.body.classList.contains('main-page') && window.innerWidth >= 992) {
@@ -41,6 +44,7 @@ const handleScrollSpy = () => {
 				const activeSection = navDesktopItems.querySelector(`[href*="${sectionsArr[0].id}"]`);
 
 				allNavItems.forEach(item => item.classList.remove('nav__item--active'));
+				console.log(allNavItems);
 
 				if (!sectionsArr[0].classList.contains('no-id')) {
 					activeSection.classList.add('nav__item--active');

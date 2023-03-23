@@ -380,7 +380,20 @@ body {
 		padding: 4em 1em;
 
 		.wrapper {
+			position: relative;
 			max-width: 700px;
+		}
+
+		.popup {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.show {
+			display: block;
 		}
 
 		&__heading {
@@ -436,8 +449,10 @@ body {
 
 			&-error {
 				margin-top: 0.2em;
+				font-size: 1.5rem;
 				font-style: italic;
-				color: tomato;
+				color: $focus-border;
+				visibility: hidden;
 			}
 
 			&-btn {
@@ -462,6 +477,16 @@ body {
 					border: 2px solid $darker-green-color;
 					box-shadow: 0 2px 5px $darker-green-color;
 				}
+			}
+
+			.contact__form-box.error input,
+			.contact__form-box.error textarea {
+				border: 2px solid $darker-green-color;
+				background-color: $contact-input-bg;
+			}
+
+			.contact__form-box.error .contact__form-error {
+				visibility: visible;
 			}
 		}
 	}
